@@ -25,7 +25,7 @@ function msgToDB(message, time) {
     });
 
     insertAsset.fail(function(jqXHR, textStatus) {
-        alert("Something went Wrong! (47)" + textStatus);
+        console.log("Something went Wrong! (msgToDB: 1)" + textStatus);
     });
 
 }

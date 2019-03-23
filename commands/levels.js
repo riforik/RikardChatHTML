@@ -31,9 +31,8 @@ function levels(messageArray, cmd, args, chat) {
                 content += `<p>Experience: ${user_experience}</p>`;
                 content += `<p>Msg Cnt: ${user_msgCount}</p>`;
                 content += `</div>`;
-                content += "<hr>";
-                chat.push(content);
-                content = "";
+                content += "<hr>";chat.push(content);
+content = "";
 
             });
             console.log(chat);

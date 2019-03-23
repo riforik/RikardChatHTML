@@ -52,7 +52,7 @@ function addMessage(message) {
 
 
     // add message to database
-    msgToDB(message, date);
+    // msgToDB(message, date);
 
     if (cmd === "!say") {
         say(messageArray, cmd, args, chat); // !say
@@ -60,7 +60,7 @@ function addMessage(message) {
         clear(messageArray, cmd, args, chat); // !say
     } else if (cmd === "!levels") {
         levels(messageArray, cmd, args, chat); // !say
-    } else {} else if (cmd === "!ll") {
+    } else if (cmd === "!ll") {
         localLevels(messageArray, cmd, args, chat); // !say
     } else {
         MSG_CHAT.innerHTML = chat.join("\n"); // send message array to HTML
