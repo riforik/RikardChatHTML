@@ -1,3 +1,5 @@
 services/inc/connect\.php
+services/inc/connect_pdo\.php
 Connect/services/inc/connect\.php
+Connect/services/inc/connect_pdo\.php
 **/.DS_Store

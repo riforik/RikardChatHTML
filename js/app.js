@@ -60,6 +60,8 @@ function addMessage(message) {
         clear(messageArray, cmd, args, chat); // !say
     } else if (cmd === "!levels") {
         levels(messageArray, cmd, args, chat); // !say
+    } else {} else if (cmd === "!ll") {
+        localLevels(messageArray, cmd, args, chat); // !say
     } else {
         MSG_CHAT.innerHTML = chat.join("\n"); // send message array to HTML
     }
