@@ -52,7 +52,7 @@ function addMessage(message) {
 
 
     // add message to database
-    // msgToDB(message, date);
+    msgToDB(message, date);
 
     if (cmd === "!say") {
         say(messageArray, cmd, args, chat); // !say

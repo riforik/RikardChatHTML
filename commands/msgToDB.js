@@ -9,7 +9,7 @@ function msgToDB(message, time) {
     var user_msg = message;
 
     var insertAsset = $.ajax({
-        url: "../services/insert.php",
+        url: "./services/insert.php",
         type: "POST",
         data: {
             userName: user_name,

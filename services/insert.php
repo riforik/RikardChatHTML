@@ -1,6 +1,6 @@
 <?php
 
-require_once("./inc/connect_pdo.php");
+require_once("./inc/connect.php");
 
 $usrName = $_POST["userName"];
 $msg = $_POST["message"];
@@ -11,7 +11,7 @@ $errorCode["message"] = "Insert Successful";
 
 
 //var_dump($dbo);
-// if there is a name :)
+
 if (!empty($name) ) {
 
 	try {
@@ -19,10 +19,10 @@ if (!empty($name) ) {
 		$msg = addslashes($msg);
 		$time = addslashes($time);
 
-		$query = "INSERT INTO messages
-		SET userName = '$usrName',
-		message = '$msg',
-		time = '$time',  ";
+		$query = "INSERT INTO actor
+		SET name = '$usrName',
+		gender = '$msg',
+		time = '$time'   ";
 		$dbo->query($query);
 	} catch (PDOException $e) {
 		$errorCode["id"] = -2;

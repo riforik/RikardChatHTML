@@ -52,5 +52,4 @@ function localLevels(messageArray, cmd, args, chat) {
 
     getLevels();
 
-
 }
