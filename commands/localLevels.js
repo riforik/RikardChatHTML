@@ -1,8 +1,13 @@
 function localLevels(messageArray, cmd, args, chat) {
+    console.log(`messageArray: ${messageArray}`);
+    console.log(`cmd: ${cmd}`);
+    console.log(`args: ${args}`);
+    console.log('Here');
+
     function getLevels() {
 
         var getLevels = $.ajax({
-            url: "../services/levels.php",
+            url: "./services/levels.php",
             type: "POST",
             dataType: "json"
         });
@@ -29,6 +34,7 @@ function localLevels(messageArray, cmd, args, chat) {
                 content = "";
 
             });
+
             console.log(chat);
 
             MSG_CHAT.innerHTML = chat.join("\n"); // send message array to HTML
@@ -36,11 +42,15 @@ function localLevels(messageArray, cmd, args, chat) {
         });
 
         getLevels.fail(function(jqXHR, textStatus) {
-            console.log("Something went Wrong! (localLevels: 1)" + textStatus);
+            console.log("Something went Wrong! (getLevels)" + textStatus);
         });
     };
 
-
+    function updateUsr() {
+        console.log('here');
+    };
 
     getLevels();
-};
+
+
+}
