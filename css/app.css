@@ -1,0 +1,165 @@
+/* Isaiah Robinson -
+  In my opinion, this way of box site creation is superior to previous methods.
+  - continuously overlapping containers so shade can increase clearly shows seperating boxes.
+  - using the shades with backrgound colour to indicate media query eases workflow to a high degree
+  - colour coded, overlap shading box site workflow
+  - consistant workflow is important for accurate structuring, using the same colors across all box sites helps a lot
+ */
+* {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+
+.content {
+    width: 100%;
+    height: auto;
+}
+
+#nav {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    top: 0px;
+    position: relative;
+}
+
+#page1 {
+    width: 100vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.form_field {
+    background: #fff;
+    color: #a3a3a3;
+    font: inherit;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    border: 0;
+    outline: 0;
+    padding: 22px 18px;
+    margin-bottom: 0;
+}
+
+#msg-send:hover {
+    background: #6c7ff2;
+}
+
+.btn {
+    display: inline-block;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    transition: all 200ms ease-in;
+    cursor: pointer;
+}
+
+.btn--inside {
+    /* margin-left: -96px; */
+}
+
+#msg-send {
+    background: #7f8ff4;
+    color: #fff;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding: 12px 36px;
+    transition: all .25s ease-out;
+    cursor: pointer;
+    height: 45px;
+}
+
+#page1 .msg-container {
+    /* margin: 10px; */
+    text-align: left;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+#page1 .msg-container .grid-x {
+    height: 100%;
+    width: 100%;
+}
+
+#msg-chat {
+    height: 85%;
+    overflow-y: scroll;
+}
+
+#msg-type {
+    height: 15%;
+}
+
+/* S P L A S H     P A G E  */
+/* Splash Info */
+#page1 .banner-image {
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.banner-image .still.cell.small-8 {
+    text-align: left;
+}
+
+/* M E D I A     Q U E R I E S */
+@media (min-width:20em) {
+
+    /* Red */
+    /* smartphones, iPhone, portrait 480x320 phones */
+    * {
+        background-color: rgba(150, 0, 0, 0.1);
+    }
+}
+
+@media (min-width:30em) {
+
+    /* Orange */
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    * {
+        background-color: rgba(150, 50, 0, 0.1);
+    }
+}
+
+@media (min-width:40em) {
+
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    * {
+        background-color: rgba(150, 150, 0, 0.1);
+    }
+}
+
+@media (min-width:60em) {
+
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    * {
+        background-color: rgba(0, 150, 0, 0.1);
+    }
+}
+
+@media (min-width:64em) {
+
+    /* big landscape tablets, laptops, and desktops */
+    * {
+        background-color: rgba(0, 150, 150, 0.1);
+    }
+}
+
+@media (min-width:80em) {
+
+    /* hi-res laptops and desktops */
+    /* h1 {
+    color: purple;
+  } */
+    * {
+        background-color: rgba(0, 0, 150, 0.1);
+    }
+}
