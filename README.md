@@ -28,7 +28,7 @@ in your code environment to start editing
 * [Atom.io](https://atom.io/) - For creating the chat bot
 
 
-#### NOTED: Only the levels will work with data from MY PERSONAL databases, you must add your own connection settings to port from your db of choice.
+#### NOTED: None of the commands where database info is grabbed will work. You must add your own connection settings to port from your db of choice.
 
 After installing the files
 Get to editing and show me what you can do!
