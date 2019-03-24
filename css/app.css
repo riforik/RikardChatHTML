@@ -1,18 +1,43 @@
-/* Isaiah Robinson -
-  In my opinion, this way of box site creation is superior to previous methods.
-  - continuously overlapping containers so shade can increase clearly shows seperating boxes.
-  - using the shades with backrgound colour to indicate media query eases workflow to a high degree
-  - colour coded, overlap shading box site workflow
-  - consistant workflow is important for accurate structuring, using the same colors across all box sites helps a lot
- */
+/* DOCUMENT INFORMATION
+	- Document: Rikard HTML Chat Bot Theme
+	- Version:  0.1
+	- Client:   RikardDev
+	- Author:   I&R Media
+*/
+/* COLORS
+	- Chat Box              #BDD3DE
+	-   2.0                 #97B5C4
+	- line break (hr)       #7E97A3
+	- channel Info          #3F5866
+	- nav                   #2B3A42
+	- default p text        #F7F7F7
+	- chat p text           #2B3A42
+	- pre borders           #ffff99
+	- send Button           #DE7300
+	- send Button Hover     #FF9000
+*/
+/* FONTS
+	- default body text     Arial, Helvetica Neue, Helvetica, sans-serif
+	- subtitle h2 text      Garamond, Hoefler Text, Times New Roman, Times, serif
+	- form input text       Cambria, Georgia, Times, Times New Roman, Times, serif
+	- default p text        Copperplate Light, Copperplate Gothic Light, serif
+	- pre and code          Consolas, Lucida Console, Monaco, monospace
+*/
+/* ===GLOBAL=== */
 * {
-    background-color: rgba(0, 0, 0, 0.1);
+    /* background-color: rgba(0, 0, 0, 0.1); */
+}
+
+body {
+    color: #F7F7F7;
 }
 
 .container {
     width: 100vw;
     height: 100vh;
     text-align: center;
+    overflow: hidden;
+    font-size: 1.25em;
 }
 
 .content {
@@ -20,15 +45,16 @@
     height: auto;
 }
 
-#nav {
+.nav {
+    background-color: #2B3A42;
     width: 100%;
-    height: 50px;
+    height: 10%;
     text-align: center;
     top: 0px;
     position: relative;
 }
 
-#page1 {
+.page1 {
     width: 100vw;
     display: flex;
     flex-flow: row wrap;
@@ -44,10 +70,6 @@
     outline: 0;
     padding: 22px 18px;
     margin-bottom: 0;
-}
-
-#msg-send:hover {
-    background: #6c7ff2;
 }
 
 .btn {
@@ -66,8 +88,8 @@
     /* margin-left: -96px; */
 }
 
-#msg-send {
-    background: #7f8ff4;
+.msg-send {
+    background: #DE7300;
     color: #fff;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
     border-radius: 2px;
@@ -77,89 +99,162 @@
     height: 45px;
 }
 
-#page1 .msg-container {
+.msg-send:hover {
+    background: #FF9000;
+}
+
+hr {
+    width: 95%;
+    border-color: #7E97A3;
+}
+
+/* ===PAGE 1=== */
+.page1 .channel-info {
+    overflow: auto;
+    height: 20%;
+    background-color: #3F5866;
+}
+
+.channel-info .still.cell.small-8 {
+    text-align: left;
+}
+
+.page1 .msg-container {
     /* margin: 10px; */
     text-align: left;
     width: 100%;
-    height: 500px;
+    height: 70%;
     overflow: hidden;
+    color: #2B3A42;
 }
 
-#page1 .msg-container .grid-x {
+.page1 .msg-container .fullG {
     height: 100%;
     width: 100%;
 }
 
-#msg-chat {
-    height: 85%;
+/* ===USER MESSAGE=== */
+.msg-chat {
+    background-color: #97B5C4;
+    height: 100%;
     overflow-y: scroll;
 }
 
-#msg-type {
-    height: 15%;
+.msg-type {
+    padding: 20px;
+    position: absolute;
+    height: auto;
+    bottom: 0;
 }
 
-/* S P L A S H     P A G E  */
-/* Splash Info */
-#page1 .banner-image {
-    height: 300px;
-    background-color: rgba(0, 0, 0, 0.2);
+.msg-msg {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
 }
 
-.banner-image .still.cell.small-8 {
-    text-align: left;
+/* .usr-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+} */
+.usr-img {
+    height: 50px;
 }
 
-/* M E D I A     Q U E R I E S */
+/*
+
+/* ===NAV=== */
+.title-bar {
+    height: 50px;
+    /* width: 40px; */
+    cursor: pointer;
+    background-color: inherit;
+}
+
+.title-bar .menu-icon {
+    margin: 0;
+    margin: 0 auto;
+}
+
+.title-bar-title {
+    display: none;
+}
+
+.top-bar {
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 1;
+    width: 200px;
+}
+
+.nav-bar-left .menu {
+    display: flex;
+    flex-flow: column;
+}
+
+.x {
+    padding: 10px;
+    margin: 0;
+    color: #2B3A42;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    line-height: .75em;
+    position: absolute;
+    cursor: pointer;
+}
+
+.dropdown.menu {
+    margin-top: 20px;
+    height: 100%;
+}
+
+/* ===MEDIA QUERIES=== */
 @media (min-width:20em) {
-
     /* Red */
     /* smartphones, iPhone, portrait 480x320 phones */
-    * {
+    /* * {
         background-color: rgba(150, 0, 0, 0.1);
-    }
+    } */
 }
 
 @media (min-width:30em) {
-
     /* Orange */
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-    * {
+    /* * {
         background-color: rgba(150, 50, 0, 0.1);
-    }
+    } */
 }
 
 @media (min-width:40em) {
-
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-    * {
+    /* * {
         background-color: rgba(150, 150, 0, 0.1);
-    }
+    } */
 }
 
 @media (min-width:60em) {
-
     /* tablet, landscape iPad, lo-res laptops ands desktops */
-    * {
+    /* * {
         background-color: rgba(0, 150, 0, 0.1);
-    }
+    } */
 }
 
 @media (min-width:64em) {
-
     /* big landscape tablets, laptops, and desktops */
-    * {
+    /* * {
         background-color: rgba(0, 150, 150, 0.1);
-    }
+    } */
 }
 
 @media (min-width:80em) {
-
     /* hi-res laptops and desktops */
     /* h1 {
     color: purple;
   } */
-    * {
+    /* * {
         background-color: rgba(0, 0, 150, 0.1);
-    }
+    } */
 }
