@@ -13,19 +13,35 @@
 <body>
 
     <!-- main -->
-    <main id="page1">
+    <main id="page1" class="page1">
 
         <!-- movie Info (title, rating) -->
-        <section id="splash" class="container">
+        <section id="channel" class="container">
             <!-- nav -->
             <nav id="nav" class="nav grid-x">
                 <div class="link cell small-3">logo</div>
                 <div class="link cell small-6">Rikard Chat Bot</div>
-                <div class="link cell small-3">Channel</div>
+                <div class="link cell small-2">Channel</div>
+                <div class="title-bar small-1" data-responsive-toggle="example-animated-menu" data-hide-for="medium">
+                    <button class="menu-icon" type="button" data-toggle></button>
+                    <div class="title-bar-title">Menu</div>
+                </div>
+
+                <div class="top-bar" id="example-animated-menu" data-animate="hinge-in-from-top spin-out">
+                    <div class="nav-bar-left">
+                        <h3 class="x">x</h3>
+                        <ul class="dropdown menu" data-dropdown-menu>
+                            <li><a href="#">Preferences</a></li>
+                            <li><a href="#">Two</a></li>
+                            <li><a href="#">Three</a></li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
 
+
             <!-- movie banner (first film) -->
-            <div class="banner-image grid-x">
+            <div class="channel-info grid-x">
                 <div class="still cell small-4">Welcome Message</div>
                 <div class="still cell small-8">
                     <h5>!say - get Rikard to respond!</h5>
@@ -36,11 +52,11 @@
 
             <!-- movie images (images from film) -->
             <div class="msg-container">
-                <div class="grid-x">
-                    <div id="msg-chat" class="still small-12">Chat Box</div>
-                    <div id="msg-type" class="cell small-12 grid-x">
-                        <input id="msg-inp" type="text" class="form_field cell small-8 medium-10" placeholder="Message ${channel}">
-                        <button id="msg-send" type="button" name="button" class="btn btn--inside cell small-4 medium-2">SEND</button>
+                <div class="grid-x fullG">
+                    <div id="msg-chat" class="msg-chat still small-12">Chat Box</div>
+                    <div id="msg-type" class="msg-type cell small-12 grid-x">
+                        <input id="msg-inp" class="form_field cell small-8 medium-10" type="text" placeholder="Message ${channel}">
+                        <button id="msg-send" class="msg-send btn btn--inside cell small-4 medium-2" type="button" name="button">SEND</button>
                     </div>
                 </div>
             </div>
@@ -58,6 +74,7 @@
     <script src="./commands/levels.js"></script>
     <script src="./commands/clear.js"></script>
     <script src="./commands/say.js"></script>
+    <script src="./js/menu.js"></script>
     <script src="./js/app.js"></script>
 </body>
 

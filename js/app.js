@@ -35,13 +35,18 @@ function addMessage(message) {
     let chatMsg = "";
 
     // fill chatMsg
+    chatMsg += `<hr>`; // break line
     chatMsg += `<div class="msg-msg">`; // msg cont
-    chatMsg += `<h5>Guest</h5>`; // user name
-    chatMsg += `<p>${message}</p>`; // contents
-    chatMsg += `<p>
+    chatMsg += `<img class="usr-img" src="./assets/img/avi1.png">`; // user img
+    chatMsg += `<div class="usr-info">`; // User info
+    chatMsg += `<h5 class="usr-name">Guest
+    <span class="usr-time">
     ${days[date.getDay()]}
     ${months[date.getMonth()]} ${date.getFullYear()},
-    ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}</p>`; // time sent
+    ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}
+    </span></h5>`; // user name
+    chatMsg += `<p class="usr-msg">${message}</p>`; // contents
+    chatMsg += `</div>`; // end User info
     chatMsg += `</div>`; // end chatMsg
 
     chat.push(chatMsg); // add new message to array
@@ -76,12 +81,12 @@ window.onload = function(e) {
 
     // on message send click
     MSG_SEND.addEventListener("click", sendMessage);
-    // MSG_INP.addEventListener("keyup", function(e) {
-    //     if (e.keyCode === 13) {
-    //         console.log("down");
-    //         console.log(e);
-    //         e.preventDefault();
-    //         MSG_SEND.click();
-    //     }
-    // });
+    MSG_INP.addEventListener("keyup", function(e) {
+        if (e.keyCode === 13) {
+            // console.log("down");
+            // console.log(e);
+            e.preventDefault();
+            MSG_SEND.click();
+        }
+    });
 }; // end onload
