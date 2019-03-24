@@ -58,7 +58,8 @@ function addMessage(message) {
 
 
     // add message to database
-    msgToDB(message, date);
+    let msgDate = `${days[date.getDay()]} ${months[date.getMonth()]} ${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    msgToDB(message, msgDate);
 
     if (cmd === "!say") {
         say(messageArray, cmd, args, chat); // !say
@@ -75,9 +76,14 @@ function addMessage(message) {
 
 }
 
+function displayScreen() {
+    $("body").fadeIn(2000);
+}
+
 // IIFE function
 window.onload = function(e) {
     clearFields(); // clear form fields
+    displayScreen();
 
     // on message send click
     MSG_SEND.addEventListener("click", sendMessage);

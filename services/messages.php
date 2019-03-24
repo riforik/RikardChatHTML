@@ -1,7 +1,7 @@
 <?php
 
 // get $conn
-require_once("./inc/connect.php");
+require_once("./inc/connect_m.php");
 
 // check connection
 if ($conn -> connect_error) {
@@ -9,7 +9,7 @@ if ($conn -> connect_error) {
 	die("connection failed: " . $conn -> connect_error);
 }
 
-$sql = "SELECT * FROM `mainLevels` ORDER BY `mainLevels`.`id`";
+$sql = "SELECT * FROM `messages` ORDER BY `messages`.`id`";
 
 $result = $conn ->query($sql);
 
@@ -17,18 +17,14 @@ if ($result -> num_rows > 0) {
 
 	while ($row = $result -> fetch_assoc()) {
 		$id = stripslashes($row["id"]);
-		$name = stripslashes($row["name"]);
-		$level = stripslashes($row["level"]);
-		$experience = stripslashes($row["experience"]);
-		$messageCount = stripslashes($row["messageCount"]);
-		$dTag = stripslashes($row["dTag"]);
+		$name = stripslashes($row["userName"]);
+		$message = stripslashes($row["message"]);
+		$mTime = stripslashes($row["mTime"]);
 
 		$user["id"] = $id;
-		$user["name"] = $name;
-		$user["level"] = $level;
-		$user["experience"] = $experience;
-		$user["messageCount"] = $messageCount;
-		$user["dTag"] = $dTag;
+		$user["userName"] = $name;
+		$user["message"] = $message;
+		$user["mTime"] = $mTime;
 
 		$users[] = $user;
 	}

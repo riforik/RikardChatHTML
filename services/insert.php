@@ -4,35 +4,44 @@ require_once("./inc/connect_m.php");
 
 $name = $_POST["name"];
 $message = $_POST["message"];
-$time = $_POST["time"];
+$mTime = $_POST["mTime"];
 
 $errorCode["id"] = 0;
 $errorCode["message"] = "Insert Successful";
 
+// check connection
+if ($conn -> connect_error) {
+	// error found in connection
+	die("connection failed: " . mysqli_connect_error());
+
+	$errorCode["id"] = 3;
+	$errorCode["message"] = "conn failed";
+
+}
 
 //var_dump($dbo);
 
 if (!empty($name) ) {
 
-	try {
-		$name = addslashes($name);
-		$message = addslashes($message);
-		$time = addslashes($time);
+	$name = addslashes($name);
+	$message = addslashes($message);
+	$mTime = addslashes($mTime);
 
-		$query = "INSERT INTO actor
-		SET name = '$name',
-		gender = '$message',
-		time = '$time'   ";
-		$dbo->query($query);
-		$errorCode["message"] = "Insert Failed here.";
-	} catch (PDOException $e) {
-		$errorCode["id"] = -2;
-		$errorCode["message"] = "Insert Failed.";
-	}
+	$sql = "INSERT INTO `messages` (userName, message, mTime) VALUES ('".$_POST["name"]."','".$_POST["message"]."','".$_POST["mTime"]."')";
+
+	// $sql2 = "INSERT INTO  (userName, message, mTime)
+  //        VALUES (?,?,?)";
+	// $stmt = mysqli_prepare($sql2);
+	// $stmt->bind_param("sssd", $name, $message, $mTime);
+	// //
+	// // $stmt->execute();
+	$conn->query($sql);
+
+	$errorCode["message"] = "Insert Failed here. $name: $message";
 
 } else {
 	$errorCode["id"] = 2;
-	$errorCode["usMsgTime"] = $time;
+	$errorCode["usMsgTime"] = $name;
 	$errorCode["usMsgName"] = $name;
 	$errorCode["usMsgMsg"] = $message;
 	$errorCode["message"] = "No name sent.";
