@@ -76,9 +76,14 @@ function addMessage(message) {
 
 }
 
+function displayScreen() {
+    $("body").fadeIn(2000);
+}
+
 // IIFE function
 window.onload = function(e) {
     clearFields(); // clear form fields
+    channelMessages();
 
     // on message send click
     MSG_SEND.addEventListener("click", sendMessage);
