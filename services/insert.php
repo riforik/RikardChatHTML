@@ -1,9 +1,9 @@
 <?php
 
-require_once("./inc/connect.php");
+require_once("./inc/connect_m.php");
 
-$usrName = $_POST["userName"];
-$msg = $_POST["message"];
+$name = $_POST["name"];
+$message = $_POST["message"];
 $time = $_POST["time"];
 
 $errorCode["id"] = 0;
@@ -15,15 +15,16 @@ $errorCode["message"] = "Insert Successful";
 if (!empty($name) ) {
 
 	try {
-		$usrName = addslashes($usrName);
-		$msg = addslashes($msg);
+		$name = addslashes($name);
+		$message = addslashes($message);
 		$time = addslashes($time);
 
 		$query = "INSERT INTO actor
-		SET name = '$usrName',
-		gender = '$msg',
+		SET name = '$name',
+		gender = '$message',
 		time = '$time'   ";
 		$dbo->query($query);
+		$errorCode["message"] = "Insert Failed here.";
 	} catch (PDOException $e) {
 		$errorCode["id"] = -2;
 		$errorCode["message"] = "Insert Failed.";
@@ -31,6 +32,9 @@ if (!empty($name) ) {
 
 } else {
 	$errorCode["id"] = 2;
+	$errorCode["usMsgTime"] = $time;
+	$errorCode["usMsgName"] = $name;
+	$errorCode["usMsgMsg"] = $message;
 	$errorCode["message"] = "No name sent.";
 }
 

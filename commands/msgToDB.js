@@ -1,31 +1,38 @@
 function msgToDB(message, time) {
+    let name = "Guest";
 
-    // console.log(`messageArray: ${messageArray}`); // dont need
-    // console.log(`cmd: ${cmd}`); // dont need
-    // console.log(`args: ${args}`); // don't need
-    // console.log('Here');
     console.log(message);
-    var user_name = "Guest";
+    var user_name = name;
     var user_msg = message;
+    var user_time = time + " tested 2";
 
     var insertAsset = $.ajax({
         url: "./services/insert.php",
         type: "POST",
         data: {
-            userName: user_name,
+            name: name,
             message: user_msg,
-            time: time,
+            time: user_time,
         },
         dataType: "json"
     });
 
     insertAsset.done(function(data) {
         // $(".assets__content").html(data.message);
-        console.log("Insert Good!");
+        console.log(`insertAsset: ${data}`); // returns object object
+
+        // object showing responseJSON and responseText
+        console.log(data);
+        console.log(`Insert Good! ${data.message}`);
+        // log the desired contents
+        console.log(`Message\nUser: ${user_name}\nMsg: ${user_msg}\nTime: ${user_time}`);
     });
 
-    insertAsset.fail(function(jqXHR, textStatus) {
-        console.log("Something went Wrong! (msgToDB: 1)" + textStatus);
+    insertAsset.fail(function(data, jqXHR, textStatus) {
+        console.log(data);
+        console.log(`Something went Wrong! (msgToDB: ${data.message}; ${textStatus})`);
+
+        console.log(`Message\nUser: ${user_name}\nMsg: ${user_msg}\nTime: ${user_time}`);
     });
 
 }

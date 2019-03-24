@@ -11,6 +11,7 @@ const PREFIX = "!";
 //------   C O N T R O L L E R    F U N C T I O N S   ------
 // message sent
 function sendMessage() {
+    console.log("called");
     let message = MSG_INP.value; // get value
 
     // if there is a message
@@ -75,10 +76,12 @@ window.onload = function(e) {
 
     // on message send click
     MSG_SEND.addEventListener("click", sendMessage);
-    MSG_INP.addEventListener("keypress", function(e) {
-        if (e.keyCode == 13) {
-            e.preventDefault();
-            sendMessage();
-        }
-    });
+    // MSG_INP.addEventListener("keyup", function(e) {
+    //     if (e.keyCode === 13) {
+    //         console.log("down");
+    //         console.log(e);
+    //         e.preventDefault();
+    //         MSG_SEND.click();
+    //     }
+    // });
 }; // end onload
