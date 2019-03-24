@@ -1,10 +1,10 @@
 function msgToDB(message, time) {
-    let name = "Guest";
+    let name = `Guest`;
 
     console.log(message);
     var user_name = name;
     var user_msg = message;
-    var user_time = time + " tested 2";
+    var user_time = time;
 
     var insertAsset = $.ajax({
         url: "./services/insert.php",
@@ -12,7 +12,7 @@ function msgToDB(message, time) {
         data: {
             name: name,
             message: user_msg,
-            time: user_time,
+            mTime: user_time,
         },
         dataType: "json"
     });
@@ -31,6 +31,7 @@ function msgToDB(message, time) {
     insertAsset.fail(function(data, jqXHR, textStatus) {
         console.log(data);
         console.log(`Something went Wrong! (msgToDB: ${data.message}; ${textStatus})`);
+        console.log(jqXHR);
 
         console.log(`Message\nUser: ${user_name}\nMsg: ${user_msg}\nTime: ${user_time}`);
     });
