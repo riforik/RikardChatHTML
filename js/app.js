@@ -83,7 +83,7 @@ function displayScreen() {
 // IIFE function
 window.onload = function(e) {
     clearFields(); // clear form fields
-    channelMessages();
+    displayScreen();
 
     // on message send click
     MSG_SEND.addEventListener("click", sendMessage);

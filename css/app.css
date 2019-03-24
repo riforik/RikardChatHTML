@@ -94,7 +94,7 @@ body {
     color: #fff;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
     border-radius: 2px;
-    padding: 12px 36px;
+    /* padding: 12px 36px; */
     transition: all .25s ease-out;
     cursor: pointer;
     height: 45px;
@@ -127,6 +127,7 @@ hr {
     height: 70%;
     overflow: hidden;
     color: #2B3A42;
+    padding-bottom: 85px;
 }
 
 .page1 .msg-container .fullG {
@@ -142,6 +143,7 @@ hr {
 }
 
 .msg-type {
+    background-color: #97B5C4;
     padding: 20px;
     position: absolute;
     height: auto;
@@ -161,6 +163,15 @@ hr {
 } */
 .usr-img {
     height: 50px;
+}
+
+.usr-name {
+    font-weight: bold;
+}
+
+.usr-time {
+    font-weight: normal;
+    font-size: 0.75em;
 }
 
 /*
