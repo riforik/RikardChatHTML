@@ -29,8 +29,10 @@
 }
 
 body {
+    font-family: 'Mukta', sans-serif;
     color: #F7F7F7;
     display: none;
+    background-color: black;
 }
 
 .container {
@@ -53,6 +55,12 @@ body {
     text-align: center;
     top: 0px;
     position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav .link {
+    height: 100%;
 }
 
 .page1 {
@@ -63,7 +71,7 @@ body {
 }
 
 .form_field {
-    background: #fff;
+    background: #F7F7F7;
     color: #a3a3a3;
     font: inherit;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
@@ -91,7 +99,7 @@ body {
 
 .msg-send {
     background: #DE7300;
-    color: #fff;
+    color: #F7F7F7;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
     border-radius: 2px;
     /* padding: 12px 36px; */
@@ -107,6 +115,28 @@ body {
 hr {
     width: 95%;
     border-color: #7E97A3;
+}
+
+.logo {
+    height: 100%;
+    padding: 10px;
+    transition: all .25s ease-out;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.bot {
+    color: #DE7300;
+}
+
+.bot span {
+    color: #2b3a42;
+}
+
+p {
+    padding: 10px;
 }
 
 /* ===PAGE 1=== */
@@ -174,6 +204,19 @@ hr {
     font-size: 0.75em;
 }
 
+.channel_name {
+    text-align: left;
+}
+
+.channel-details {
+    padding: 5px;
+    background: #2b3a42;
+}
+
+.channel-details h4 {
+    margin: 0;
+}
+
 /*
 
 /* ===NAV=== */
@@ -197,6 +240,7 @@ hr {
     position: absolute;
     display: none;
     right: 0;
+    top: 0;
     z-index: 1;
     width: 200px;
 }
@@ -213,6 +257,7 @@ hr {
     top: 0;
     right: 0;
     z-index: 100;
+    font-family: 'Baloo Chettan', cursive;
     line-height: .75em;
     position: absolute;
     cursor: pointer;

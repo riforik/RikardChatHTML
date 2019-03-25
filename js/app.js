@@ -62,7 +62,7 @@ function addMessage(message) {
     msgToDB(message, msgDate);
 
     if (cmd === "!say") {
-        say(messageArray, cmd, args, chat); // !say
+        say(messageArray, cmd, args, chat, msgDate); // !say
     } else if (cmd === "!clear") {
         clear(messageArray, cmd, args, chat); // !say
     } else if (cmd === "!levels") {
@@ -77,12 +77,23 @@ function addMessage(message) {
 }
 
 function displayScreen() {
+    // fade in display
     $("body").fadeIn(2000);
+    // wait then scroll to newest message
+    setTimeout(function() {
+        scrollToBottom();
+    }, 200)
+}
+
+function scrollToBottom() {
+    // scroll to bottom of msg-chat
+    $('#msg-chat').scrollTop($('#msg-chat')[0].scrollHeight);
 }
 
 // IIFE function
 window.onload = function(e) {
     clearFields(); // clear form fields
+    // channelMessages();
     displayScreen();
 
     // on message send click
