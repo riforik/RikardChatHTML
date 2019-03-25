@@ -6,6 +6,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rikard Inline-Chat Bot</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Mukta:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
+
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -19,12 +23,14 @@
         <section id="channel" class="container">
             <!-- nav -->
             <nav id="nav" class="nav grid-x">
-                <div class="link cell small-3">logo</div>
-                <div class="link cell small-6">Rikard Chat Bot</div>
-                <div class="link cell small-2">Channel</div>
-                <div class="title-bar small-1" data-responsive-toggle="example-animated-menu" data-hide-for="medium">
+                <div class="link cell small-3">
+                    <img class="logo" src="./assets/img/logo-002.svg" alt="">
+                </div>
+                <div class="link cell small-6">
+                    <h1>Rikard Chat Bot</h1>
+                </div>
+                <div class="title-bar small-3" data-responsive-toggle="example-animated-menu" data-hide-for="medium">
                     <button class="menu-icon" type="button" data-toggle></button>
-                    <div class="title-bar-title">Menu</div>
                 </div>
 
                 <div class="top-bar" id="example-animated-menu" data-animate="hinge-in-from-top spin-out">
@@ -40,17 +46,32 @@
             </nav>
 
 
-            <!-- movie banner (first film) -->
+            <!-- channel info -->
             <div class="channel-info grid-x">
-                <div class="still cell small-4">Welcome Message</div>
+                <div class="still cell small-4">
+                    <h3>Welcome</h3>
+                    <p>Messages are recorded and more is to be added so type around with yourself and the bot for now</p>
+                </div>
                 <div class="still cell small-8">
                     <h5>!say - get Rikard to respond!</h5>
                     <h5>!clear - clear a set amount of messages</h5>
-                    <h5>!levels - get all the levels from the data base!</h5>
+                    <h5>!levels - get all the levels from the data base</h5>
+                    <h5>!ll - get all the levels from the data base using php files</h5>
+                </div>
+            </div>
+            <div class="channel-details grid-x">
+                <div class="cell small-8 channel_name">
+                    <h4>Global Chat</h4>
+                </div>
+                <div class="cell small-2">
+                    <h4>Mute</h4>
+                </div>
+                <div class="cell small-2">
+                    <h4>Users</h4>
                 </div>
             </div>
 
-            <!-- movie images (images from film) -->
+            <!-- message container -->
             <div class="msg-container">
                 <div class="grid-x fullG">
                     <div id="msg-chat" class="msg-chat still small-12">Chat Box</div>
@@ -69,6 +90,7 @@
     <script src="./js/vendor/jquery.js"></script>
     <script src="./js/vendor/what-input.js"></script>
     <script src="./js/vendor/foundation.js"></script>
+    <script src="./commands/getMsgs.js"></script>
     <script src="./commands/messages.js"></script>
     <script src="./commands/localLevels.js"></script>
     <script src="./commands/msgToDB.js"></script>
