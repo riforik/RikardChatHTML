@@ -93,6 +93,7 @@ function scrollToBottom() {
 // IIFE function
 window.onload = function(e) {
     clearFields(); // clear form fields
+    // getMsgs();
     // channelMessages();
     displayScreen();
 
