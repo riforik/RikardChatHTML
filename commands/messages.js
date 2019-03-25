@@ -1,8 +1,7 @@
 function channelMessages() {
-    var timer, delay = 10000; // set timer for message refresh delat
 
-    timer = setInterval(function getMessages() {
-
+    function getMessages() {
+        console.log("here");
         var getMessages = $.ajax({
             url: "./services/messages.php",
             type: "POST",
@@ -43,12 +42,12 @@ function channelMessages() {
         getMessages.fail(function(jqXHR, textStatus) {
             console.log("Something went Wrong! (getLevels)" + textStatus);
         });
-    });
+    };
 
     function updateUsr() {
         console.log('here');
     };
 
-    getMessages();
+    // getMessages();
 
 }
