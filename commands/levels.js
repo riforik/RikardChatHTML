@@ -1,4 +1,4 @@
-function levels(messageArray, cmd, args, chat) {
+function levels(messageArray, cmd, args, chat, msgDate) {
     console.log(`messageArray: ${messageArray}`);
     console.log(`cmd: ${cmd}`);
     console.log(`args: ${args}`);
@@ -32,16 +32,15 @@ function levels(messageArray, cmd, args, chat) {
                                 <span class="usr-time">${msgDate}</span></h5>`; // user name
                 content += `<div class="usr-msg">
                 <h3>${user_name}</h3>
-                <h5>${user_level}</h5>
-                <h5>${user_experience}</h5>
-                <h5>${user_msgCount}</h5>
+                <h5>Level: ${user_level}</h5>
+                <h5>XP: ${user_experience}</h5>
+                <h5>Msg Count:${user_msgCount}</h5>
                 </div>`; // contents
                 content += `</div>`; // end user msg
                 content += `</div>`; // end user info
                 content += `</div>`; // end chatMsg
                 chat.push(content);
                 content = "";
-
             });
             console.log(chat);
 
