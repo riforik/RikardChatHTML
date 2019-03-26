@@ -7,6 +7,10 @@ let chat = [];
 let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 const PREFIX = "!";
+const BOT_INFO = {
+    name: "Rikard Chat Bot",
+    avi: "avi4.png"
+};
 
 //------   C O N T R O L L E R    F U N C T I O N S   ------
 // message sent
@@ -59,16 +63,20 @@ function addMessage(message) {
 
     // add message to database
     let msgDate = `${days[date.getDay()]} ${months[date.getMonth()]} ${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-    msgToDB(message, msgDate);
+    // msgToDB(message, msgDate); // send message to database
 
     if (cmd === "!say") {
         say(messageArray, cmd, args, chat, msgDate); // !say
     } else if (cmd === "!clear") {
-        clear(messageArray, cmd, args, chat); // !say
+        clear(messageArray, cmd, args, chat, msgDate); // !say
     } else if (cmd === "!levels") {
-        levels(messageArray, cmd, args, chat); // !say
+        levels(messageArray, cmd, args, chat, msgDate); // !say
     } else if (cmd === "!ll") {
-        localLevels(messageArray, cmd, args, chat); // !say
+        localLevels(messageArray, cmd, args, chat, msgDate); // !say
+    } else if (cmd === "!doggo") {
+        getDoggo(messageArray, cmd, args, chat, msgDate); // !say
+    } else if (cmd === "!catto") {
+        getCatto(messageArray, cmd, args, chat, msgDate); // !say
     } else {
         MSG_CHAT.innerHTML = chat.join("\n"); // send message array to HTML
     }

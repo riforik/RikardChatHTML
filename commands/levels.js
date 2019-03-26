@@ -1,4 +1,4 @@
-function levels(messageArray, cmd, args, chat) {
+function levels(messageArray, cmd, args, chat, msgDate) {
     console.log(`messageArray: ${messageArray}`);
     console.log(`cmd: ${cmd}`);
     console.log(`args: ${args}`);
@@ -24,16 +24,23 @@ function levels(messageArray, cmd, args, chat) {
                 var user_experience = item.experience;
                 var user_msgCount = item.messageCount;
 
-                content += `<div id='user${i}' class='user'>`;
-                content += `<p>Name: ${user_name}</p>`;
-                content += `<p>ID: ${user_id}</p>`;
-                content += `<p>Level: ${user_level}</p>`;
-                content += `<p>Experience: ${user_experience}</p>`;
-                content += `<p>Msg Cnt: ${user_msgCount}</p>`;
-                content += `</div>`;
-                content += "<hr>";chat.push(content);
-content = "";
-
+                content += `<hr>`; // break line
+                content += `<div class="msg-msg">`; // msg cont
+                content += `<img class="usr-img" src="./assets/img/${BOT_INFO.avi}">`; // user img
+                content += `<div class="usr-info">`; // User info
+                content += `<h5 class="usr-name bot">${BOT_INFO.name}
+                                <span class="usr-time">${msgDate}</span></h5>`; // user name
+                content += `<div class="usr-msg">
+                <h3>${user_name}</h3>
+                <h5>Level: ${user_level}</h5>
+                <h5>XP: ${user_experience}</h5>
+                <h5>Msg Count:${user_msgCount}</h5>
+                </div>`; // contents
+                content += `</div>`; // end user msg
+                content += `</div>`; // end user info
+                content += `</div>`; // end chatMsg
+                chat.push(content);
+                content = "";
             });
             console.log(chat);
 
